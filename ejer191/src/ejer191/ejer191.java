@@ -13,7 +13,8 @@ public class ejer191 {
      5. Verifica si el asiento está libre. Si lo está, márcalo como ocupado (por ejemplo, con 'O'). Si no, muestra un mensaje de error.
      6. Repite los pasos 3 a 5 hasta que el usuario decida salir.*/
 	public static void main(String[] args) {
-		int filas = 5;
+		/*Crea la matriz*/
+		int filas = 10;
 		int columnas = 10;
 		char[][] asientos = new char[filas][columnas];
 		for (int i = 0; i < filas; i++) {
@@ -21,6 +22,7 @@ public class ejer191 {
                 asientos[i][j] = 'L';
             }
         }
+		/*Mostrar asientos L*/
 		mostrarAsientos(asientos);
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Introduce un numero de fila: ");
@@ -30,9 +32,33 @@ public class ejer191 {
 			}
 		System.out.println("Introduce un numero de columna: ");
 		int columna = sc.nextInt();
-		if()
-		}
-	
+		/*Este if es para que guarde los sitios ocupados*/
+		if (fila >= 0 && fila < filas && columna >= 0 && columna < columnas) {
+            if (asientos[fila][columna] == 'L') {
+                asientos[fila][columna] = 'O';
+                System.out.println("Reservado");
+		} else {
+            System.out.println("Ese asiento esta ocupado");
+        }
+    } else {
+        System.out.println("Esa fila/columna no vale");
+    }
+    mostrarAsientos(asientos);
 	}
+private static void mostrarAsientos(char[][] asientos) {
+	/*vuelve a hacer los bucles*/
+    System.out.println("Asientos: ");
+    for (int i = 0; i < asientos.length; i++) {
+    	/*Este bucle for se utiliza para iterar a través de las filas de la matriz de asientos.*/
+        for (int j = 0; j < asientos[0].length; j++) {
+        	/*Este bucle for interno se utiliza para iterar a través de las columnas de la matriz de asientos.*/
+            System.out.print(asientos[i][j] + " ");
+            /*Imprime el carácter almacenado en la posición (i, j) de la matriz de asientos*/
+        }
+        System.out.println();
+    }
 
+    System.out.println();
 }
+}
+
