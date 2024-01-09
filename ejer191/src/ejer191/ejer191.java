@@ -25,6 +25,7 @@ public class ejer191 {
 		/*Mostrar asientos L*/
 		mostrarAsientos(asientos);
 		Scanner sc = new Scanner(System.in);
+		while (true) {
 		System.out.println("Introduce un numero de fila: ");
 		int fila = sc.nextInt();
 		if (fila == -1) {
@@ -44,6 +45,7 @@ public class ejer191 {
         System.out.println("Esa fila/columna no vale");
     }
     mostrarAsientos(asientos);
+		}
 	}
 private static void mostrarAsientos(char[][] asientos) {
 	/*vuelve a hacer los bucles*/
